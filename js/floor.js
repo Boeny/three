@@ -1,6 +1,6 @@
 objects.floor = {
 	Start: function(){
-		let geometry = new THREE.PlaneGeometry(2000, 2000, 100, 100);
+		let geometry = new THREE.PlaneGeometry(2000, 2000, 100, 100);//new Physijs.PlaneMesh(2000, 2000, 100, 100);
 		geometry.rotateX(-Math.PI/2);
 		
 		for (var i = 0; i < geometry.vertices.length; i ++) {

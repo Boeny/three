@@ -1,4 +1,4 @@
-(function(){
+function initControls(camera, renderer){
 	var instructions = document.getElementById('instructions');
 	
 	if ('pointerLockElement' in document || 'mozPointerLockElement' in document || 'webkitPointerLockElement' in document) {
@@ -36,6 +36,6 @@
 	} else {
 		instructions.innerHTML = 'Your browser doesn\'t seem to support Pointer Lock API';
 	}
-})();
-
-controls.Start(camera, renderer);
+	
+	controls.Start(camera, renderer);
+}
