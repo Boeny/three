@@ -1,4 +1,5 @@
 let objects = {};
+let updates = [];
 
 function Start(s, c, r){
 	for (var i in objects){
@@ -17,11 +18,13 @@ function Start(s, c, r){
 		else{
 			s.add(o.mesh);
 		}
+		
+		if (o.Update) updates.push(o.Update.bind(o));
 	}
 }
 
 function Update(){
-	for (var i in objects){
-		objects[i].Update && objects[i].Update();
+	for (var i = 0; i < updates.length; i++){
+		updates[i]();
 	}
 }
